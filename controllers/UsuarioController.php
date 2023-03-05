@@ -56,6 +56,48 @@ class usuarioController{
 
 
     }
+
+    public function login(){
+        if(isset($_POST)){
+
+            //IDENTIFIAR USUARIO
+
+            //CONSULTA A LA BASE DE DATOS PARA COMPROBAR CREDENCIALES
+            $usuario = new Usuario();
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPassword($_POST['password']);
+
+
+            $identity= $usuario ->login();
+
+          
+     
+            //CREAR SESION
+            if($identity && is_object($identity) ){
+                $_SESSION['identity']=$identity;
+
+                if($identity->rol=='admin'){
+                        $_SESSION['admin']=true;
+                }
+            }else{
+                $_SESSION['error_login'] == 'Identificacion fallida';
+            }
+
+          
+
+        }
+        header("Location:".base_url);
+    }
+
+    public function logOut(){
+        if(isset($_SESSION['identity'])){
+            unset($_SESSION['identity']);
+        }
+        if(isset($_SESSION['admin'])){
+            unset($_SESSION['admin']);
+        }
+       header("Location:".base_url);
+    }
 }
 
 ?>

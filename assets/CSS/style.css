@@ -23,6 +23,10 @@ a:hover{
     background: white;
 
 }
+.buttons{
+    width: 100%;
+   align-items: center;
+}
 /*HEADER*/
 #header{
  
@@ -150,21 +154,30 @@ a:hover{
 }
 
 /*FORMS*/
-
+.form_container{
+    width: 50%;
+}
 input[type='text'],
 input[type='email'],
+input[type='number'],
+textarea,
+select,
 input[type='password'],
 label{
     display: block;
     width: 95%;
-    margin-top: 2px;
+    height: 30px;
+   
     margin-bottom: 2px;
 
 }
 
 
+
 input[type='text'],
 input[type='email'],
+input[type='number'],
+textarea,
 input[type='password'],
 select{
     border:1px solid #C9C9C9;
@@ -174,7 +187,11 @@ select{
     color: gray;
     transition: all 300ms;
 }
+
+
+
 input[type='text']:focus,
+input[type='number']:focus,
 input[type='email']:focus,
 input[type='password']:focus
 {
@@ -190,15 +207,49 @@ button{
     display: block;
     border-radius: 2px;
     width: 50%;
-    padding: 5px;
+    padding: 10px;
     color: white;
     background: #1579b5;
     transition: all 300ms;
     border: 1px solid white;
 }
 
+.button-small{
+    text-align: center;
+    width: 120px;   
+    text-decoration: none;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    color: white;
+    background-color: #1579b5;
+    transition: all 300ms;
+   }
+   .button-small:hover{
+    background-color: #e2e4e6;
+    box-shadow: 2px 2px 5px rgb(182, 177, 177);
+   }
+
+   .button-small2{
+    text-align: center;
+    width: 120px;   
+    text-decoration: none;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    color: white;
+    background-color: #1579b5;
+    transition: all 300ms;
+   }
+   .button-small2:hover{
+    background-color: #e2e4e6;
+    box-shadow: 2px 2px 5px rgb(182, 177, 177);
+   }
+
 label,input[type='button'],
 input[type='submit'],
+
+
 button{
     display: block;
     margin-bottom: 10px;
@@ -213,6 +264,7 @@ button:hover{
     border: 1px solid #1579b5;
    
 }
+
 #lateral ul{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -313,6 +365,34 @@ button:hover{
     border-top: 5px solid #01B1EA;
     margin-bottom: 30px;
 
+}
+
+
+/*TABLAS*/
+table{
+  
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #e2e0e09f;
+    box-shadow: 2px 5px 3px rgba(170, 170, 170, 0.548);
+}
+td{
+    border-top: 1px solid #5555559f;;
+    border-width: 0px;
+    padding: 24px;
+
+
+  
+}
+
+
+th{
+    padding-top: 10px;
+   
+    border-bottom: 1px solid #b6b2b29f;
 }
 
 

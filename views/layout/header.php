@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?=base_url?>assets/CSS/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/bs/js/bootstrap.min.js"></script>
+
     <title>Document</title>
 </head>
 
@@ -20,23 +22,20 @@
             </div>
 
         </header>
-
+  
         <!--MENU-->
         <nav id='menu'>
-
+        <?php $categorias= Utils::showCategorias();?>
             <ul>
                 <li>
-                    <a href="#">Inicio</a>
-                </li>
-                <li>
-                    <a href="#">Categoria 1</a>
-                </li>
-                <li>
-                    <a href="#">Categoria 2</a>
-                </li>
-                <li>
-                    <a href="#">Categoria 3</a>
-                </li>
+                    <a href="index.php">Inicio</a>
+                </li>  
+                <?php while($cat = $categorias->fetch_object()):?>
+                    <li>
+                        <a href="#"><?=$cat->nombre?></a>
+                    </li>
+                    <?php endwhile;?>
+             
             </ul>
         </nav>
 
